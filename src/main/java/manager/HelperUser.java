@@ -36,4 +36,12 @@ public class HelperUser extends HelperBase {
 //        return text;
 
     }
+
+    public boolean isLogged() {
+        return isElementPresent(By.xpath("//*[text()=' Logout ']"));
+    }
+
+    public void logout() {
+        click(By.xpath("//*[text()=' Logout ']"));
+    }
 }
