@@ -36,7 +36,7 @@ public class HelperUser extends HelperBase {
     }
 
     public String getMessage() {
-        // pause(1000);
+         pause(1000);
         return wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
 //        WebElement element = wd.findElement(By.cssSelector(".dialog-container>h2"));
 //        String text = element.getText();
@@ -93,16 +93,18 @@ public class HelperUser extends HelperBase {
     }
 
     public void checkPolicyXY() {
-        WebElement label = wd.findElement(By.cssSelector("label[for='terms-of-use']"));
-        Rectangle rect = label.getRect();
-        int w = rect.getWidth();
+        if (!wd.findElement(By.id("terms-of-use")).isSelected()) {
+            WebElement label = wd.findElement(By.cssSelector("label[for='terms-of-use']"));
+            Rectangle rect = label.getRect();
+            int w = rect.getWidth();
 
-       // Dimension size = wd.manage().window().getSize();
+            // Dimension size = wd.manage().window().getSize();
 
 
-        int xOffSet = -w/2;
+            int xOffSet = -w / 2;
 
-        Actions actions = new Actions(wd);
-        actions.moveToElement(label, xOffSet, 0).click().release().perform();
+            Actions actions = new Actions(wd);
+            actions.moveToElement(label, xOffSet, 0).click().release().perform();
+        }
     }
 }
