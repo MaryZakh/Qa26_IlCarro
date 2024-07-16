@@ -25,9 +25,7 @@ public class HelperUser extends HelperBase {
         type(By.id("password"), user.getPassword());
     }
 
-    public void submit() {
-        click(By.xpath("//*[@type='submit']"));
-    }
+
 
     public void clickOkButton() {
         if (isElementPresent(By.xpath("//button[text()='Ok']"))) {
@@ -35,14 +33,7 @@ public class HelperUser extends HelperBase {
         }
     }
 
-    public String getMessage() {
-         pause(1000);
-        return wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
-//        WebElement element = wd.findElement(By.cssSelector(".dialog-container>h2"));
-//        String text = element.getText();
-//        return text;
 
-    }
 
     public boolean isLogged() {
         return isElementPresent(By.xpath("//*[text()=' Logout ']"));
@@ -106,5 +97,12 @@ public class HelperUser extends HelperBase {
             Actions actions = new Actions(wd);
             actions.moveToElement(label, xOffSet, 0).click().release().perform();
         }
+    }
+
+    public void login(User user) {
+        openLoginForm();
+        fillLoginForm(user);
+        submit();
+        clickOkButton();
     }
 }
