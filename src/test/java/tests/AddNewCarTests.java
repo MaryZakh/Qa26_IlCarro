@@ -39,6 +39,7 @@ public class AddNewCarTests extends TestBase {
 
         app.getHelperCar().openCarForm();
         app.getHelperCar().fillCarForm(car);
+        app.getHelperCar().attachPhoto("D:\\qa26\\Qa26_IlCarro\\Bugatti_Chiron_1.jpg");
         app.getHelperCar().submit();
         Assert.assertTrue(app.getHelperCar().getMessage().contains("added successful"));
         Assert.assertEquals(app.getHelperCar().getMessage(),car.getManufacture()+ " "+car.getModel()+" added successful");
