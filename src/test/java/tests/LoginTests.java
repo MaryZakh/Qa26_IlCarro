@@ -19,7 +19,7 @@ public class LoginTests extends TestBase {
     @Test
     public void loginSuccess1() {
         User user = new User().withEmail("margo@gmail.com").withPassword("Mmar123456$");
-        logger.info("Test start with test data --->/n" + "email : 'marga@gmail.com' & password : 'Mmar123456$'");
+        logger.info("Test start with test data --->" + " email : 'marga@gmail.com' & password : 'Mmar123456$'");
 
 //
 //        user.setEmail("margo@gmail.com");
@@ -37,7 +37,7 @@ public class LoginTests extends TestBase {
 
     @Test
     public void loginSuccess() {
-        logger.info("Test start with test data --->/n" + "email : 'margo@gmail.com' & password : 'Mmar123456$'");
+        logger.info("Test start with test data --->" + " email : 'margo@gmail.com' & password : 'Mmar123456$'");
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm("margo@gmail.com", "Mmar123456$");
         app.getHelperUser().submit();
@@ -49,7 +49,7 @@ public class LoginTests extends TestBase {
 
     @Test
     public void loginSuccessModel() {
-        logger.info("Test start with test data --->/n" + "email : 'margo@gmail.com' & password : 'Mmar123456$'");
+        logger.info("Test start with test data --->" + " email : 'margo@gmail.com' & password : 'Mmar123456$'");
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm("margo@gmail.com", "Mmar123456$");
         app.getHelperUser().submit();
@@ -61,7 +61,7 @@ public class LoginTests extends TestBase {
 
     @Test
     public void loginWrongEmail() {
-        logger.info("Test start with test data --->/n" + "email : 'margogmail.com' & password : 'Mmar123456$'");
+        logger.info("Test start with test data --->" + " email : 'margogmail.com' & password : 'Mmar123456$'");
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm("margogmail.com", "Mmar123456$");
         app.getHelperUser().submit();
@@ -71,7 +71,7 @@ public class LoginTests extends TestBase {
 
     @Test
     public void loginEmptyEmail() {
-        logger.info("Test start with test data --->/n" + "email : ' ' & password : 'Mmar123456$'");
+        logger.info("Test start with test data --->" + " email : ' ' & password : 'Mmar123456$'");
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm(" ", "Mmar123456$");
         app.getHelperUser().submit();
@@ -81,7 +81,7 @@ public class LoginTests extends TestBase {
 
     @Test
     public void loginWrongPassword() {
-        logger.info("Test start with test data --->/n" + "email : ' ' & password : 'Mmar123'");
+        logger.info("Test start with test data --->" + " email : ' ' & password : 'Mmar123'");
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm("margo@gmail.com", "Mmar123");
         app.getHelperUser().submit();
@@ -99,7 +99,7 @@ public class LoginTests extends TestBase {
 
     @Test
     public void loginUnregistered() {
-        logger.info("Test start with test data --->/n" + "email : 'luck@gmail.com' & password : 'Lluck123456$'");
+        logger.info("Test start with test data --->" + " email: 'luck@gmail.com' & password: 'Lluck123456$'");
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm("luck@gmail.com", "Lluck123456$");
         app.getHelperUser().submit();

@@ -1,0 +1,2 @@
+08:31:47.075 INFO  tests.TestBase - Name of method -->loginUnregistered
+08:31:52.098 INFO  tests.TestBase - Test start with test data --->/nemail : 'luck@gmail.com' & password : 'Lluck123456$'
