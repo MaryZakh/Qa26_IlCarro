@@ -61,14 +61,9 @@ public class HelperCar extends HelperBase {
 
         // "7/27/2024", "7/30/2024"  27  30
         String[] from = dateFrom.split("/"); //["7"]["27"]["2024"]
-
-
         String locatorFrom = "//div[text()=' " + from[1] + " ']";
         click(By.xpath(locatorFrom));
-
-
         String[] to = dateTo.split("/");
-
         click(By.xpath("//div[text()=' " + to[1] + " ']"));
 
     }
@@ -127,6 +122,30 @@ public class HelperCar extends HelperBase {
 
 
 
+    }
+
+    public void searchAnyPeriod(String city, String dateFrom, String dateTo) {
+        typeCity(city);
+        click(By.id("dates"));
+
+        LocalDate now = LocalDate.now();
+        LocalDate from = LocalDate.parse(dateFrom,DateTimeFormatter.ofPattern("M/d/yyyy"));
+        LocalDate to = LocalDate.parse(dateTo,DateTimeFormatter.ofPattern("M/d/yyyy"));
+
+        int diffYear;
+
+        int diffMonth;
+
+        diffYear = from.getYear()-now.getYear();
+        if (diffYear==0){
+            diffMonth = from.getMonthValue()-now.getMonthValue();
+        }else {
+            diffMonth = 12 - now.getMonthValue() + from.getMonthValue();
+        }
+        clickNextMonthBtn(diffMonth);
+
+        String locator = String.format("//div[text()=' %s ']", from.getDayOfMonth());
+        click(By.xpath(locator));
     }
 
 }
