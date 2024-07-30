@@ -1,4 +1,0 @@
-08:34:09.647 INFO  manager.ApplicationManager - All tests run in Chrome Browser
-08:34:19.741 INFO  manager.ApplicationManager - The link--->https://ilcarro.web.app/search
-08:34:19.758 INFO  tests.TestBase - Name of method -->loginUnregistered
-08:34:24.853 INFO  tests.TestBase - Test start with test data --->email : 'luck@gmail.com' & password : 'Lluck123456$'
