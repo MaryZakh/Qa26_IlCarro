@@ -20,6 +20,11 @@ public class HelperBase {
 //        element.click();
     }
 
+    public String getErrorText() {
+        return wd.findElement(By.cssSelector("div.error")).getText();
+
+    }
+
     public void type(By locator, String text){
         WebElement element = wd.findElement(locator);
         element.click();
@@ -74,7 +79,14 @@ public class HelperBase {
         return wd.findElements(locator).size()>0;
     }
 
+    public boolean isYallaButtonNotActive() {
+        boolean res = isElementPresent(By.cssSelector("button[disabled]"));
 
+        WebElement element = wd.findElement(By.cssSelector("button[type='submit']"));
+        boolean result = element.isEnabled();
+
+        return res && !result;
+    }
 
     public void getScreen(String link){
         TakesScreenshot takesScreenshot = (TakesScreenshot) wd;
